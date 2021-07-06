@@ -1,0 +1,88 @@
+@for $i from 1 through 12 {
+    .col-#{$i} { width: 100%/12 * $i; }
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font-size: 25px;
+    box-sizing: border-box;
+}
+body{
+    color: rgb(230, 230, 230);
+    min-height: 100vh;
+    background-image: linear-gradient(to right, #434343 0%, black 100%);
+
+}
+
+.big-container { 
+    display:flex;
+    justify-content:space-evenly;
+    flex-wrap: wrap;
+}
+
+.anime-container{
+    height: 22vh;
+    width: 25vw;
+
+    min-width: 400px;
+    margin: 1vh;
+    border: 1px solid gray;
+    display: flex;
+    text-align: center;   
+}
+
+
+img {
+    object-fit: cover;
+    display:block;
+    max-height:100%;
+    min-height: 100%;
+    max-width: 125%;
+}
+
+img:hover{
+    object-fit: contain;
+}
+
+#content {
+    text-align: center;
+    margin: auto;
+}
+
+.search-bar-container {
+    width: 100%;
+    text-align: center;
+    margin: 1rem 0;
+
+    #search-bar{
+        color: lightgray;
+        padding: 12px;
+        background-color: rgba(240, 240, 240, 0.05);
+    }
+    #search-bar:hover{
+        background-color: rgba(240, 240, 240, 0.15);
+    }
+    #search-bar::placeholder{
+        color: rgba(240, 240, 240, 0.8);
+    } 
+}
+
+
+
+h1, h2{
+    margin:auto;
+    width: 80%;
+}
+h1{
+    height: 8vh;
+    line-height: 26px;
+}
+h2{
+    height: 4vh;
+}
+
+.anime-container:hover{
+    background-image: linear-gradient(to left, #09203f 0%, #537895 100%);
+    cursor: pointer;
+}
