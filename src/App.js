@@ -1,5 +1,6 @@
 import React from 'react';
 import Animes from './Components/Animes';
+import Nav from './Components/Nav';
 
 export default class FetchApi extends React.Component {
     state = {
@@ -21,6 +22,7 @@ export default class FetchApi extends React.Component {
                 {this.state.loading || !this.state.harambe ?
                     (<div>loading...</div>) :
                     (<div>
+                        <Nav harambe={this.state.harambe}/>
                         <Animes animes={this.state.harambe} />
                     </div>)}
             </div>

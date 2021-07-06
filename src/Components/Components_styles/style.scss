@@ -15,6 +15,49 @@ body{
 
 }
 
+.nav-container{
+    width: 100%;
+    padding: 0.5rem;
+    background-color: rgba(130, 130, 130, 0.2);
+}
+
+.nav-bar{
+    margin-left: 8vw;
+    width: 60%;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    button, h4{
+        cursor: pointer;
+        transition-duration: 0.4s;
+    }
+    button{
+        
+        background-color: transparent;
+        border: none;
+        font-size:32px;
+        color: lightgray;
+    }
+    button:hover{
+        color: white;
+    }
+    h4{
+        padding:5px;
+        margin-right: 15px;
+        max-width: 120px;
+        font-size: 22px;
+    }
+    h4:hover{
+        color: cyan;
+    }
+    .nav-bar-middle{
+        width: 60%;
+        display:flex;
+        justify-content: center;
+
+    }
+}
+
 .big-container { 
     display:flex;
     justify-content:space-evenly;
@@ -68,17 +111,15 @@ img:hover{
     } 
 }
 
-
-
-h1, h2{
+#content h1, h2{
     margin:auto;
     width: 80%;
 }
-h1{
+#content h1{
     height: 8vh;
     line-height: 26px;
 }
-h2{
+#content h2{
     height: 4vh;
 }
 
