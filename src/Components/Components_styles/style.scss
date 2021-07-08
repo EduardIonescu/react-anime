@@ -7,6 +7,7 @@
     padding: 0;
     font-size: 25px;
     box-sizing: border-box;
+    text-decoration: none;
 }
 body{
     color: rgb(230, 230, 230);
@@ -22,12 +23,14 @@ body{
 }
 
 .nav-bar{
-    margin-left: 8vw;
-    width: 60%;
+    margin-left: 92px;
+    width: 70%;
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
-    button, h4{
+
+    
+    button, h4, a{
         cursor: pointer;
         transition-duration: 0.4s;
     }
@@ -47,14 +50,19 @@ body{
         max-width: 120px;
         font-size: 22px;
     }
-    h4:hover{
-        color: cyan;
-    }
+    
     .nav-bar-middle{
-        width: 60%;
-        display:flex;
+        width: 54%;
+        min-width:355px;
+        display: flex;
         justify-content: center;
 
+        a{
+            color:lightgray;
+        }
+        a:hover, h4:hover{
+            color: cyan;
+        }
     }
 }
 
@@ -111,7 +119,7 @@ img:hover{
     } 
 }
 
-#content h1, h2{
+#content h1, h2{ 
     margin:auto;
     width: 80%;
 }
