@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 
 import './Components_styles/style.scss';
 
@@ -52,13 +53,7 @@ export const Animes = () => {
                                 return anime;
                             }
                         }).map(function (anime, i) {
-                            return <Anime title={anime.title}
-                                episodes={anime.episodes}
-                                type={anime.type}
-                                score={anime.score}
-                                synopsis={anime.synopsis}
-                                image={anime.image_url}
-                                url={anime.url}
+                            return <Anime anime={anime}
                                 key={i} />;
                         })}
                 </div>)}
@@ -70,28 +65,24 @@ export const Animes = () => {
 /*
  *   Creates each individual Anime rectangle thingie.
  */
-const Anime = ({ title, episodes = null, type = null,
-    image = null, score = null, url }) => {
+const Anime = ({ anime }) => {
 
-    function openAnimeUrl() {
-        window.open(url);
-    }
     return (
         <div>
-            <div className='anime-container' onClick={(openAnimeUrl)}>
+            <Link to={`/anime/${anime.mal_id}`} className='anime-container'>
                 <div className='col-4'>
-                    <img src={image} alt="" />
+                    <img src={anime.image_url} alt="" />
                 </div>
                 <div className='col-8'>
                     <div id='content'>
-                        <h1>{title}</h1>
-                        <h2>Episodes: {episodes}</h2>
-                        <h2>{type}</h2>
-                        <h2>Score: {score}</h2>
+                        <h1>{anime.title}</h1>
+                        <h2>Episodes: {anime.episodes}</h2>
+                        <h2>{anime.type}</h2>
+                        <h2>Score: {anime.score}</h2>
                     </div>
                 </div>
-            </div>
-        </div>
+            </Link>
+        </div> 
     )
 }
 

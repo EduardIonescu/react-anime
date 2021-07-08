@@ -18,7 +18,7 @@ export function Nav() {
 
             const animeItems = await data.json();
             console.dir(animeItems);
-            setAnimeItems(animeItems);
+            setAnimeItems(animeItems); 
         }
         fetchAnimeItems();
     }, [count]);
@@ -52,7 +52,6 @@ export function Nav() {
                             <FontAwesomeIcon icon={faDiceD20} /> Random</h4>) :
                         (<h4><FontAwesomeIcon icon={faDiceD20} /> Random</h4>)
                     }
-
                 </div>
             </nav>
         </div>

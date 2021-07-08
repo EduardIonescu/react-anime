@@ -6,6 +6,6 @@ export const myList = () => {
         <div>
             <p>Mata</p>
         </div>
-)}
+)} 
 
 export default myList;
