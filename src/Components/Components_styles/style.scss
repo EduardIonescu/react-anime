@@ -1,5 +1,12 @@
+@import 'node_modules/react-modal-video/scss/modal-video.scss';
 @for $i from 1 through 12 {
     .col-#{$i} { width: 100%/12 * $i; }
+}
+
+:root {
+    --title-bg-color: rgba(0, 26, 255, 0.2);
+    --detail-color: rgba(255, 255, 255, 0.7);
+    --border-color: rgba(100, 100, 100, 0.5);
 }
 
 * {
@@ -8,8 +15,10 @@
     font-size: 25px;
     box-sizing: border-box;
     text-decoration: none;
+
 }
 body{
+    font-family: sans-serif;
     color: rgb(230, 230, 230);
     min-height: 100vh;
     background-image: linear-gradient(to right, #434343 0%, black 100%);
@@ -47,7 +56,7 @@ body{
     h4{
         padding:5px;
         margin-right: 15px;
-        max-width: 120px;
+        max-width: 130px;
         font-size: 22px;
     }
     
@@ -57,7 +66,7 @@ body{
         display: flex;
         justify-content: center;
 
-        a{
+        a, h4{
             color:lightgray;
         }
         a:hover, h4:hover{
@@ -67,9 +76,13 @@ body{
 }
 
 .big-container { 
+    min-height: 100vh;
     display:flex;
     justify-content:space-evenly;
     flex-wrap: wrap;
+    a{
+        color: lightgray;
+    }
 }
 
 .anime-container{
@@ -80,16 +93,16 @@ body{
     margin: 1vh;
     border: 1px solid gray;
     display: flex;
-    text-align: center;   
-}
+    text-align: center;
 
-
-img {
-    object-fit: cover;
-    display:block;
-    max-height:100%;
-    min-height: 100%;
-    max-width: 125%;
+    img {
+        object-fit: cover;
+        display:block;
+        max-height:100%;
+        min-height: 100%;
+        min-width:100%;
+        max-width: 100%;
+    }   
 }
 
 img:hover{
@@ -97,6 +110,7 @@ img:hover{
 }
 
 #content {
+    padding-top: 12px;
     text-align: center;
     margin: auto;
 }
@@ -132,6 +146,124 @@ img:hover{
 }
 
 .anime-container:hover{
-    background-image: linear-gradient(to left, #09203f 0%, #537895 100%);
+    background-image: linear-gradient(to left, #071930 0%, #263c4d 100%);
     cursor: pointer;
+}
+
+.detail-container{
+    width: 70%;
+    height: 100%;
+    margin: auto;
+    border: 1px solid var(--border-color);
+    color: var(--detail-color);
+
+    .detail-sub-container{
+        width: 100%;
+        height: 100%;
+        padding: 10px;
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .detail-title{
+        width: 100%;
+        padding:12px;
+        background-color: var(--title-bg-color);
+        border-bottom: 1px solid black;
+
+        .title{
+            font-size: 28px;
+        }
+        .sub-title{
+            font-size:22px;
+            color:rgb(143, 143, 143);
+        }
+    }
+
+    hr{
+        border: 1px solid var(--border-color);
+    }
+
+    aside{
+        border-right: 1px solid var(--border-color);
+        
+        padding: 1px;
+
+        h5{
+            padding:8px;
+            margin-top:12px;
+        }
+
+        img{
+            width: 95%;
+            margin: 2px auto;
+        }
+
+        p, p strong{
+            font-size: 18px;
+        }
+
+        p{
+            margin-left:5px;
+            line-height: 26px;
+            padding:4px;
+        }
+    }
+
+    section{
+        padding: 4px;
+        
+        .content-nav{
+            width: 100%;
+            background-color:rgba(255, 255, 255, 0.1);
+            padding:12px;
+            display: flex;
+            justify-content:space-evenly;
+            
+            div, div strong{
+                font-size: 20px;
+            }
+
+            .score-container{
+                border-right: 1px solid rgb(83, 83, 83);
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+
+                .score{
+                    text-transform: uppercase;
+                    background-color: var(--title-bg-color);
+                    font-size: 12px;
+                    font-weight: 700;
+                    padding: 2px 14px;
+                    border-radius: 8%;
+                }
+                strong{
+                    font-size:30px;
+                }
+                .votes{
+                    font-size: 11px;
+                }
+            }
+            .content-nav-right{
+                padding: 20px 8px;
+
+            }
+        }
+        .synopsis{
+            width:95%;
+            margin: 20px auto;
+
+            
+            h5{
+                font-size: 24px;
+                padding: 14px 0;
+            }
+            p{
+                padding: 6px 0;
+                font-size: 15px;
+                letter-spacing: 0.2px;
+            }
+        }
+    }
 }
