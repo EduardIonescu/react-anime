@@ -11,17 +11,17 @@ export function Nav() {
     const [count, setCount] = useState(0);
 
     useEffect(() => {
-        const fetchAnimeItems = async (randomPage = getRandomInt(360)) => {
+        const fetchAnimeItems = async (randomPage = getRandomInt(330)) => {
             const data = await fetch(
                 `https://api.jikan.moe//v3/top/anime/${randomPage}`
             );
 
             const animeItems = await data.json();
             console.dir(animeItems);
-            setAnimeItems(animeItems); 
+            setAnimeItems(animeItems);
         }
         fetchAnimeItems();
-    }, [count]);
+    }, []);
 
 
 
@@ -29,8 +29,15 @@ export function Nav() {
         return Math.floor(Math.random() * max);
     }
     function getRandomAnime() {
-        let random = (animeItems.top[getRandomInt(50)].url);
-        setCount(count + 1);
+        let random;
+        if (animeItems !== null) {
+            random = (animeItems.top[Math.floor(Math.random() *
+                animeItems.top.length)].url);
+            setCount(count + 1);
+        }
+        else {
+            random = `myanimelist.net/anime/${getRandomInt(1000)}`;
+        }
         window.open(random);
     }
 
@@ -39,7 +46,7 @@ export function Nav() {
             <nav className='nav-bar'>
                 <Link to='/'><button type='button'
                 ><FontAwesomeIcon icon={faDraftingCompass} />
-                    SiteName</button></Link>
+                    Animesun</button></Link>
                 <div className='nav-bar-middle'>
                     <h4>
                         <Link to='/' >

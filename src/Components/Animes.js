@@ -41,11 +41,11 @@ export const Animes = () => {
             {loading || !animeItems ?
                 (<div>loading...</div>) :
                 (<div className='big-container'>
-                    
+
                     {/*
                         animeItems gets sliced to fit on page better, max result: 50
                     */
-                    // eslint-disable-next-line
+                        // eslint-disable-next-line
                         animeItems.results.slice(0, 48).filter((anime) => {
                             if (searchTerm === '') {
                                 return anime;
@@ -82,7 +82,7 @@ const Anime = ({ anime }) => {
                     </div>
                 </div>
             </Link>
-        </div> 
+        </div>
     )
 }
 
