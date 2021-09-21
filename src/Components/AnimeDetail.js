@@ -18,14 +18,14 @@ function AnimeDetail(match) {
         https://api.jikan.moe/v3/anime/${match.match.params.id}/characters_staff`);
             const characters = await fetchCharacters.json();
             console.dir(characters);
-            setCharacters(characters);  
+            setCharacters(characters);
         }
         fetchItem();
         fetchCharacters();
         // eslint-disable-next-line
     }, []);
     if (item) {
-        const mystyle = { 
+        const mystyle = {
             width: '20%',
             minWidth: 100,
         }
