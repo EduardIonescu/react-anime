@@ -49,3 +49,30 @@ export const RATED = [
     ['r17', 'R - 17+ recommended (violence & profanity)']
 ];
 
+export const SCORE = [
+    [9, '(9) Masterpiece'],
+    [8, '(8) Great'],
+    [7, '(7) Good'],
+    [6, '(6) Fine'],
+    [5, '(5) Average'],
+    [4, '(4) Bad'],
+    [3, '(3) Very Bad'],
+    [2, '(2) Horrible'],
+    [1, '(1) Appalling']
+];
+
+export const YEAR = [
+    [2021, '2021'],
+    [2020, '2020'],
+    [2019, '2019'],
+    [2018, '2018'],
+    [2017, '2017'],
+    [2016, '2016'],
+    [2015, '2015'],
+    [null, 'ALL']
+];
+
+export const STATUS = [
+    ['airing', 'Ongoing'],
+    ['complete', 'Completed'],
+]

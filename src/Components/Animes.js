@@ -22,7 +22,6 @@ export const Animes = () => {
         );
 
         const animeItems = await data.json();
-        console.dir(animeItems);
         setAnimeItems(animeItems);
         setLoading(false);
     }
@@ -43,7 +42,7 @@ export const Animes = () => {
                 (<div className='big-container'>
 
                     {/*
-                        animeItems gets sliced to fit on page better, max result: 50
+                        animeItems gets sliced to fit on page better, max result: 48
                     */
                         // eslint-disable-next-line
                         animeItems.results.slice(0, 48).filter((anime) => {
@@ -65,7 +64,7 @@ export const Animes = () => {
 /*
  *   Creates each individual Anime rectangle thingie.
  */
-const Anime = ({ anime }) => {
+export const Anime = ({ anime }) => {
 
     return (
         <div>

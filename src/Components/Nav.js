@@ -17,26 +17,27 @@ export function Nav() {
             );
 
             const animeItems = await data.json();
-            console.dir(animeItems);
             setAnimeItems(animeItems);
         }
         fetchAnimeItems();
     }, []);
-
-
 
     function getRandomInt(max) {
         return Math.floor(Math.random() * max);
     }
     function getRandomAnime() {
         let random;
-        if (animeItems !== null) {
-            random = (animeItems.top[Math.floor(Math.random() *
-                animeItems.top.length)].url);
-            setCount(count + 1);
+        if (animeItems && !animeItems.error) {
+            try {
+                random = (animeItems.top[Math.floor(Math.random() *
+                    animeItems.top.length)].url);
+                setCount(count + 1);
+            }
+            catch (e) {
+            }
         }
-        else {
-            random = `myanimelist.net/anime/${getRandomInt(1000)}`;
+        if (!random) {
+            random = `https://myanimelist.net/anime/${getRandomInt(1000)}`;
         }
         window.open(random);
     }
@@ -50,15 +51,15 @@ export function Nav() {
                 <div className='nav-bar-middle'>
                     <h4>
                         <Link to='/' >
-                            <FontAwesomeIcon icon={faHome} /> Home</Link></h4>
+                            <FontAwesomeIcon icon={faHome} /> Home</Link>
+                    </h4>
                     <h4>
                         <Link to='/list' >
-                            <FontAwesomeIcon icon={faList} /> List</Link></h4>
-                    {animeItems ?
-                        (<h4 onClick={(getRandomAnime)} >
-                            <FontAwesomeIcon icon={faDiceD20} /> Random</h4>) :
-                        (<h4><FontAwesomeIcon icon={faDiceD20} /> Random</h4>)
-                    }
+                            <FontAwesomeIcon icon={faList} /> List</Link>
+                    </h4>
+                    <h4 onClick={(getRandomAnime)} >
+                        <FontAwesomeIcon icon={faDiceD20} /> Random
+                    </h4>
                 </div>
             </nav>
         </div>
