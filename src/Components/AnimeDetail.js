@@ -4,24 +4,29 @@ import './Components_styles/style.scss';
 
 function AnimeDetail(match) {
     const [item, setItem] = useState(false);
-    const [characters, setCharacters] = useState(false);
+//    const [characters, setCharacters] = useState(false);
     useEffect(() => {
-        const fetchItem = async () => {
-            const fetchItem = await fetch(`
-            https://api.jikan.moe/v3/anime/${match.match.params.id}`);
-            const item = await fetchItem.json();
-            console.dir(item);
-            setItem(item);
-        };
-        const fetchCharacters = async () => {
+        try{
+            const fetchItem = async () => {
+                const fetchItem = await fetch(`
+                https://api.jikan.moe/v3/anime/${match.match.params.id}`);
+                const item = await fetchItem.json();
+                setItem(item);
+            }
+            fetchItem();
+        }
+        catch(e){
+        }
+/*        const fetchCharacters = async () => {
             const fetchCharacters = await fetch(`
         https://api.jikan.moe/v3/anime/${match.match.params.id}/characters_staff`);
             const characters = await fetchCharacters.json();
             console.dir(characters);
             setCharacters(characters);
         }
-        fetchItem();
-        fetchCharacters();
+*/
+        
+//        fetchCharacters();
         // eslint-disable-next-line
     }, []);
     if (item) {
@@ -99,8 +104,6 @@ function AnimeDetail(match) {
                             <hr />
                             <p>{item.synopsis}</p>
                         </div>
-
-
                     </section>
                 </div>
 
